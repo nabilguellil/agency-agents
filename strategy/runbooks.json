@@ -170,6 +170,50 @@
           ]
         }
       ]
+    },
+    {
+      "slug": "figma-elementor-website",
+      "title": "Figma-to-Elementor Website",
+      "mode": "NEXUS-Sprint",
+      "duration": "3-6 weeks",
+      "summary": "Intake questions, approved plan, and approved Figma design before a native-first WordPress build in Elementor.",
+      "doc": "strategy/runbooks/scenario-figma-elementor-website.md",
+      "roster": [
+        {
+          "group": "Core Team",
+          "activation": "always",
+          "agents": [
+            "agents-orchestrator",
+            "project-manager-senior",
+            "design-ux-architect",
+            "design-ui-designer",
+            "engineering-figma-to-elementor-web-builder",
+            "testing-evidence-collector",
+            "testing-reality-checker"
+          ]
+        },
+        {
+          "group": "Design & Motion Team",
+          "activation": "phases 1-2",
+          "agents": [
+            "design-brand-guardian",
+            "design-whimsy-injector",
+            "design-ui-finish-gate-reviewer"
+          ]
+        },
+        {
+          "group": "Build & QA Support",
+          "activation": "as needed",
+          "agents": [
+            "engineering-cms-developer",
+            "engineering-frontend-developer",
+            "testing-accessibility-auditor",
+            "engineering-wordpress-performance",
+            "marketing-seo-specialist",
+            "marketing-content-creator"
+          ]
+        }
+      ]
     }
   ]
 }
