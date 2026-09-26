@@ -138,6 +138,7 @@ Evidence Collector verifies improvements.
 | **Enterprise Feature Runbook** | Enterprise feature development | `strategy/runbooks/scenario-enterprise-feature.md` |
 | **Marketing Campaign Runbook** | Multi-channel campaign | `strategy/runbooks/scenario-marketing-campaign.md` |
 | **Incident Response Runbook** | Production incident handling | `strategy/runbooks/scenario-incident-response.md` |
+| **Figma-to-Elementor Website Runbook** | Gated Figma design → WordPress/Elementor build | `strategy/runbooks/scenario-figma-elementor-website.md` |
 
 ---
 
