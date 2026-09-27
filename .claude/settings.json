@@ -2,7 +2,8 @@
   "enabledPlugins": {
     "superpowers@claude-plugins-official": true,
     "claude-mem@thedotmack": true,
-    "claude-mem-cowork@thedotmack": true
+    "claude-mem-cowork@thedotmack": true,
+    "impeccable@impeccable": true
   },
   "extraKnownMarketplaces": {
     "claude-plugins-official": {
@@ -15,6 +16,12 @@
       "source": {
         "source": "github",
         "repo": "thedotmack/claude-mem"
+      }
+    },
+    "impeccable": {
+      "source": {
+        "source": "github",
+        "repo": "pbakaus/impeccable"
       }
     }
   }
