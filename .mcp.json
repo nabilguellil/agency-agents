@@ -1,9 +1,10 @@
 {
   "mcpServers": {
     "playwright": {
-      "command": "npx",
+      "command": "node",
       "args": [
-        "@playwright/mcp@latest"
+        "-e",
+        "const e=process.env;if(e.CLAUDE_CODE_REMOTE==='true'){e.PLAYWRIGHT_MCP_HEADLESS??='true';e.PLAYWRIGHT_MCP_SANDBOX??='false';e.PLAYWRIGHT_MCP_EXECUTABLE_PATH??='/opt/pw-browsers/chromium'}const p=require('child_process').spawn('npx',['-y','@playwright/mcp@latest'],{stdio:'inherit',shell:process.platform==='win32'});for(const s of['SIGINT','SIGTERM'])process.on(s,()=>p.kill(s));p.on('exit',c=>process.exit(c??1))"
       ]
     }
   }
