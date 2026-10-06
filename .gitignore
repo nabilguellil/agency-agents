@@ -86,3 +86,6 @@ integrations/vibe/agents/
 integrations/vibe/prompts/
 integrations/zcode/agents/
 graphify-out/
+
+# Playwright MCP snapshots and console logs
+.playwright-mcp/
