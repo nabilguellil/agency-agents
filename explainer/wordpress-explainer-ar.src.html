@@ -1,0 +1,317 @@
+<title>موقعك على ووردبريس</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&family=Readex+Pro:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a 1280x720 night stage (scaled to fit). One browser window stays on the left and turns from a
+   pencil sketch into a branded shop; the right column carries one Arabic line per voiceover beat.
+   Deliberately single-look (night indigo + saffron + teal), so colors are set explicitly. */
+:root {
+  --night: #0e1b2c;
+  --night2: #15283f;
+  --saffron: #ffb33f;
+  --teal: #2ec4b6;
+  --rose: #ff6b8b;
+  --paper: #f7f0e6;
+  --ink: #1d2a3a;
+  --mist: #9fb3c8;
+  --line: rgba(255,255,255,.14);
+  --display: "Lalezar", "Readex Pro", "Segoe UI", Tahoma, sans-serif;
+  --body: "Readex Pro", "Segoe UI", Tahoma, sans-serif;
+  color-scheme: dark;
+}
+html, body { background: #0a1422; color: #eef3f8; font-family: var(--body); }
+.wrap { max-width: 1100px; margin: 0 auto; padding-block: 24px 40px; padding-inline: 16px; display: grid; gap: 14px; }
+.viewport { width: 100%; max-width: 100%; aspect-ratio: 16 / 9; position: relative; overflow: hidden; border-radius: 16px; background: var(--night); box-shadow: 0 30px 60px -30px #000; }
+.stage { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; transform-origin: 0 0; overflow: hidden; direction: rtl;
+  background:
+    radial-gradient(900px 500px at 85% 15%, rgba(46,196,182,.16), transparent 60%),
+    radial-gradient(700px 500px at 10% 90%, rgba(255,179,63,.12), transparent 60%),
+    var(--night); }
+.pattern { position: absolute; inset: 0; opacity: .5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.05' stroke-width='1.2'%3E%3Crect x='22' y='22' width='36' height='36'/%3E%3Crect x='22' y='22' width='36' height='36' transform='rotate(45 40 40)'/%3E%3Ccircle cx='40' cy='40' r='8'/%3E%3C/g%3E%3C/svg%3E"); background-size: 80px 80px; }
+.abs { position: absolute; }
+
+/* Scene 1: hook */
+.hook { inset: 0; display: grid; place-content: center; text-align: center; }
+.hook h1 { margin: 0; font: 400 150px/1 var(--display); color: #fff; }
+.hook h1 span { color: var(--saffron); }
+.spark { width: 26px; height: 26px; border-radius: 50%; background: var(--saffron); box-shadow: 0 0 0 10px rgba(255,179,63,.18), 0 0 60px 10px rgba(255,179,63,.55); left: 627px; top: 160px; }
+
+/* Right column lines */
+.say { right: 70px; top: 190px; width: 430px; text-align: right; }
+.say small { display: block; font: 600 18px/1 var(--body); letter-spacing: .02em; color: var(--teal); margin-bottom: 14px; }
+.say h2 { margin: 0; font: 400 66px/1.15 var(--display); color: #fff; text-wrap: balance; }
+.say h2 em { font-style: normal; color: var(--saffron); }
+.swatches { display: flex; gap: 12px; margin-top: 26px; }
+.swatches i { width: 54px; height: 54px; border-radius: 14px; display: block; }
+.type-spec { margin-top: 18px; font: 400 64px/1 var(--display); color: rgba(255,255,255,.85); }
+.type-spec span { font: 500 16px/1 var(--body); color: var(--mist); margin-inline-start: 12px; }
+
+/* Browser */
+.device { left: 70px; top: 112px; width: 700px; height: 456px; transform-origin: 50% 50%; }
+.browser { position: absolute; inset: 0; border-radius: 18px; background: var(--paper); overflow: hidden; box-shadow: 0 40px 80px -30px rgba(0,0,0,.8); }
+.sketch { position: absolute; inset: 0; }
+.chrome { height: 44px; background: #e9e0d2; display: flex; align-items: center; gap: 12px; padding: 0 16px; direction: ltr; }
+.chrome .dots { display: flex; gap: 7px; }
+.chrome .dots i { width: 11px; height: 11px; border-radius: 50%; background: #cdbfaa; display: block; }
+.url { flex: 1; height: 26px; border-radius: 8px; background: #fffaf3; font: 500 14px/26px var(--body); color: var(--ink); padding: 0 12px; display: flex; gap: 8px; align-items: center; }
+.url b { width: 10px; height: 10px; border-radius: 3px; background: var(--teal); display: block; }
+.live { margin-inline-start: auto; font: 700 12px/1 var(--body); background: #19b37a; color: #fff; padding: 6px 10px; border-radius: 99px; }
+.site { position: absolute; top: 44px; left: 0; right: 0; bottom: 0; padding: 18px 22px; display: grid; gap: 14px; align-content: start; direction: rtl; }
+.nav { height: 34px; display: flex; justify-content: space-between; align-items: center; }
+.logo { font: 400 26px/1 var(--display); color: var(--ink); display: flex; gap: 8px; align-items: center; }
+.logo i { width: 22px; height: 22px; border-radius: 50% 50% 50% 0; background: var(--rose); display: block; transform: rotate(-45deg); }
+.tabs { display: flex; gap: 16px; font: 600 14px/1 var(--body); color: #5b6b7c; }
+.tabs span { display: inline-block; }
+.cart { position: relative; width: 36px; height: 32px; border-radius: 10px; background: var(--ink); display: grid; place-items: center; }
+.cart::before { content: ""; width: 16px; height: 12px; border: 2.5px solid #fff; border-top: 0; border-radius: 0 0 5px 5px; }
+.badge { position: absolute; top: -8px; left: -8px; min-width: 22px; height: 22px; border-radius: 11px; background: var(--rose); color: #fff; font: 700 13px/22px var(--body); text-align: center; }
+.hero { height: 150px; border-radius: 14px; background: var(--ink); color: #fff; display: grid; grid-template-columns: 1.2fr 1fr; overflow: hidden; }
+.hero-copy { padding: 22px 24px; display: grid; gap: 10px; align-content: center; }
+.hero-copy strong { font: 400 34px/1.05 var(--display); }
+.hero-copy em { font-style: normal; justify-self: start; font: 700 13px/1 var(--body); background: var(--saffron); color: var(--ink); padding: 9px 14px; border-radius: 99px; }
+.hero-art { position: relative; background: #2b3f57; }
+.petal { position: absolute; width: 64px; height: 64px; border-radius: 50% 50% 50% 0; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.card { height: 158px; border-radius: 12px; background: #fff; box-shadow: 0 0 0 1px #eadfce inset; padding: 10px; display: grid; gap: 7px; align-content: start; }
+.card .ph { height: 70px; border-radius: 8px; }
+.card strong { font: 700 14px/1.2 var(--body); color: var(--ink); }
+.card .add { justify-self: start; font: 700 12px/1 var(--body); color: #fff; background: var(--teal); padding: 7px 10px; border-radius: 8px; }
+.wire { position: absolute; border: 2.5px dashed #b9a98f; border-radius: 12px; }
+
+/* Other devices */
+.tablet { left: 470px; top: 250px; width: 230px; height: 300px; border-radius: 22px; background: #0b1624; padding: 10px; box-shadow: 0 30px 60px -20px #000; }
+.phone { left: 380px; top: 330px; width: 130px; height: 250px; border-radius: 24px; background: #0b1624; padding: 8px; box-shadow: 0 30px 60px -20px #000; }
+.mini { width: 100%; height: 100%; border-radius: 15px; background: var(--paper); overflow: hidden; display: grid; gap: 6px; align-content: start; padding: 8px; }
+.mini .h { height: 42%; border-radius: 8px; background: var(--ink); position: relative; overflow: hidden; }
+.mini .h::after { content: ""; position: absolute; width: 38%; aspect-ratio: 1; left: 12%; top: 18%; border-radius: 50% 50% 50% 0; background: var(--rose); }
+.mini .r { height: 26px; border-radius: 6px; background: #fff; box-shadow: 0 0 0 1px #eadfce inset; }
+.gauge { right: 70px; top: 470px; display: flex; gap: 16px; align-items: center; }
+.ring { --score: 0; width: 96px; height: 96px; border-radius: 50%; background: conic-gradient(var(--teal) calc(var(--score) * 1%), rgba(255,255,255,.1) 0); display: grid; place-items: center; }
+.ring b { width: 76px; height: 76px; border-radius: 50%; background: var(--night); display: grid; place-items: center; font: 400 36px/1 var(--display); color: #fff; }
+.gauge span { font: 600 18px/1.4 var(--body); color: var(--mist); }
+
+/* Launch */
+.trail { left: 380px; top: 560px; width: 520px; height: 260px; background: radial-gradient(closest-side, rgba(255,179,63,.9), rgba(255,107,139,.4) 50%, transparent); filter: blur(10px); }
+.ping { padding: 12px 16px; border-radius: 14px; background: #fff; color: var(--ink); display: flex; gap: 10px; align-items: center; font: 600 16px/1.2 var(--body); box-shadow: 0 20px 40px -18px #000; }
+.ping i { width: 30px; height: 30px; border-radius: 9px; background: #19b37a; display: grid; place-items: center; color: #fff; font-style: normal; font-weight: 700; }
+.globe { left: 360px; top: 210px; width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #3fd8c9, #157a72 60%, #0b3d3a); box-shadow: 0 0 80px rgba(46,196,182,.35); overflow: hidden; }
+.globe::before, .globe::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.25); }
+.globe::before { transform: scaleX(.45); }
+.globe::after { transform: scaleY(.45); }
+.dot { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: var(--saffron); box-shadow: 0 0 0 6px rgba(255,179,63,.3); }
+
+/* CTA */
+.cta { inset: 0; display: grid; place-content: center; text-align: center; gap: 22px; background: radial-gradient(900px 600px at 50% 40%, #1d3756, var(--night)); }
+.cta small { font: 600 22px/1 var(--body); color: var(--teal); }
+.cta h2 { margin: 0; font: 400 96px/1.1 var(--display); color: #fff; }
+.cta h2 em { font-style: normal; color: var(--saffron); }
+.cta .btn { justify-self: center; font: 700 26px/1 var(--body); color: var(--ink); background: var(--saffron); padding: 20px 40px; border-radius: 99px; box-shadow: 0 16px 40px -12px rgba(255,179,63,.7); }
+
+/* Subtitles */
+.sub { left: 0; right: 0; bottom: 26px; display: flex; justify-content: center; }
+.sub span { font: 500 24px/1.4 var(--body); color: #fff; background: rgba(5,12,22,.72); padding: 8px 18px; border-radius: 10px; }
+
+/* Transport */
+.bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; direction: rtl; }
+.bar button { font: 600 15px/1 var(--body); color: #eef3f8; background: #15283f; border: 1px solid #2a4260; padding: 11px 16px; border-radius: 99px; cursor: pointer; }
+.bar button.primary { background: var(--saffron); color: var(--ink); border-color: var(--saffron); }
+.bar button:focus-visible, .bar input:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+.bar input[type=range] { flex: 1; min-width: 140px; accent-color: var(--saffron); }
+.time { font: 500 14px/1 var(--body); color: var(--mist); font-variant-numeric: tabular-nums; min-width: 80px; }
+.note { margin: 0; font: 400 15px/1.7 var(--body); color: var(--mist); direction: rtl; max-width: 70ch; }
+</style>
+
+<div class="wrap" dir="rtl">
+  <div class="viewport" id="viewport">
+    <div class="stage" id="stage" role="img" aria-label="فيديو تعريفي مدته ١٥ ثانية: تصميم وبناء وإطلاق مواقع ووردبريس">
+      <div class="pattern"></div>
+
+      <div class="abs spark" id="spark"></div>
+      <div class="abs hook" id="hook"><h1>عندك <span>فكرة؟</span></h1></div>
+
+      <!-- browser that evolves -->
+      <div class="abs device" id="device">
+        <div class="browser">
+          <div class="chrome"><div class="dots"><i></i><i></i><i></i></div><div class="url"><b id="lock"></b><span>baytalward.com</span><span class="live" id="live">مباشر</span></div></div>
+          <div class="site">
+            <div class="nav" id="nav"><span class="logo"><i></i>بيت الورد</span>
+              <span class="tabs"><span id="t1">الرئيسية</span><span id="t2">المتجر</span><span id="t3">من نحن</span><span id="t4">تواصل</span></span>
+              <span class="cart"><span class="badge" id="badge">٠</span></span></div>
+            <div class="hero" id="hero"><div class="hero-copy"><strong>باقات تُسعد من تحب</strong><em>اطلب الآن</em></div>
+              <div class="hero-art"><span class="petal" style="background:var(--rose);left:40px;top:30px;transform:rotate(-45deg)"></span><span class="petal" style="background:var(--saffron);left:110px;top:60px;width:44px;height:44px;transform:rotate(-20deg)"></span><span class="petal" style="background:var(--teal);left:60px;top:95px;width:36px;height:36px;transform:rotate(-70deg)"></span></div></div>
+            <div class="cards">
+              <div class="card" id="c1"><div class="ph" style="background:linear-gradient(135deg,#ffb3c4,var(--rose))"></div><strong>باقة الربيع</strong><span class="add">أضف للسلة</span></div>
+              <div class="card" id="c2"><div class="ph" style="background:linear-gradient(135deg,#ffe0a3,var(--saffron))"></div><strong>هدية التخرج</strong><span class="add">أضف للسلة</span></div>
+              <div class="card" id="c3"><div class="ph" style="background:linear-gradient(135deg,#a8f0e8,var(--teal))"></div><strong>نباتات منزلية</strong><span class="add">أضف للسلة</span></div>
+            </div>
+          </div>
+          <div class="sketch" id="sketch" style="background:var(--paper)">
+            <div class="wire" id="w1" style="top:62px;left:22px;right:22px;height:34px"></div>
+            <div class="wire" id="w2" style="top:110px;left:22px;right:22px;height:150px"></div>
+            <div class="wire" id="w3" style="top:274px;left:22px;width:206px;height:158px"></div>
+            <div class="wire" id="w4" style="top:274px;left:247px;width:206px;height:158px"></div>
+            <div class="wire" id="w5" style="top:274px;right:22px;width:206px;height:158px"></div>
+          </div>
+        </div>
+        <svg class="abs" id="outline" width="700" height="456" viewBox="0 0 700 456" style="left:0;top:0;overflow:visible" aria-hidden="true">
+          <rect x="1.5" y="1.5" width="697" height="453" rx="18" fill="none" stroke="#ffb33f" stroke-width="3" stroke-dasharray="2300" stroke-dashoffset="2300" id="outlineRect"/>
+        </svg>
+      </div>
+      <div class="abs tablet" id="tablet"><div class="mini"><div class="h"></div><div class="r"></div><div class="r"></div><div class="r"></div></div></div>
+      <div class="abs phone" id="phone"><div class="mini"><div class="h"></div><div class="r"></div><div class="r"></div></div></div>
+
+      <!-- right column lines -->
+      <div class="abs say" id="say1"><small>من الفكرة إلى الموقع</small><h2>نحوّلها إلى موقع ووردبريس <em>يعمل لصالحك</em></h2></div>
+      <div class="abs say" id="say2"><small>١ · التصميم</small><h2>نصمّم <em>بهويّتك</em></h2>
+        <div class="swatches"><i id="sw1" style="background:var(--rose)"></i><i id="sw2" style="background:var(--saffron)"></i><i id="sw3" style="background:var(--teal)"></i><i id="sw4" style="background:var(--ink);box-shadow:0 0 0 1px var(--line) inset"></i></div>
+        <div class="type-spec" id="spec">أبجد<span>خط عربي يناسب علامتك</span></div></div>
+      <div class="abs say" id="say3"><small>٢ · البناء</small><h2>نبني صفحاتك <em>ومتجرك</em></h2></div>
+      <div class="abs say" id="say4"><small>٣ · السرعة</small><h2>سريع على <em>كل الشاشات</em></h2></div>
+      <div class="abs gauge" id="gauge"><div class="ring" id="ring"><b id="score">٠</b></div><span>سرعة التحميل<br>من ١٠٠</span></div>
+
+      <!-- launch -->
+      <div class="abs trail" id="trail"></div>
+      <div class="abs globe" id="globe"><span class="dot" style="left:70px;top:90px"></span><span class="dot" style="left:180px;top:70px"></span><span class="dot" style="left:200px;top:180px"></span><span class="dot" style="left:100px;top:200px"></span></div>
+      <div class="abs say" id="say5"><small>٤ · الإطلاق</small><h2>ثم نطلقه <em>للعالم</em></h2></div>
+      <div class="abs ping" id="p1" style="left:90px;top:170px"><i>✓</i>طلب جديد · باقة الربيع</div>
+      <div class="abs ping" id="p2" style="left:620px;top:120px"><i>✓</i>حجز موعد جديد</div>
+      <div class="abs ping" id="p3" style="left:150px;top:470px"><i>✓</i>رسالة من عميل</div>
+
+      <!-- CTA -->
+      <div class="abs cta" id="cta"><small>تصميم · بناء · إطلاق</small><h2>احجز استشارتك<br><em>المجانية اليوم</em></h2><span class="btn">احجز الآن</span></div>
+
+      <div class="abs sub"><span id="subtitle"></span></div>
+    </div>
+  </div>
+
+  <div class="bar">
+    <button id="sound" class="primary" type="button">تشغيل بالصوت</button>
+    <button id="play" type="button">إيقاف مؤقت</button>
+    <button id="replay" type="button">من البداية</button>
+    <input id="scrub" type="range" min="0" max="15000" step="10" value="0" aria-label="موضع الفيديو">
+    <span class="time" id="time">٠٫٠ / ١٥ ث</span>
+  </div>
+  <p class="note">فيديو مدته ١٥ ثانية بصوت عربي. المتجر الظاهر «بيت الورد» مثال توضيحي لعميل افتراضي.</p>
+  <audio id="vo" preload="auto" src="data:audio/mpeg;base64,__AUDIO__"></audio>
+</div>
+
+<script>
+(() => {
+  const D = 15000, $ = id => document.getElementById(id);
+  const vp = $('viewport'), stage = $('stage');
+  const fit = () => { stage.style.transform = `scale(${vp.clientWidth / 1280})`; };
+  new ResizeObserver(fit).observe(vp); fit();
+
+  const OUT = 'cubic-bezier(.2,.8,.2,1)', IN = 'cubic-bezier(.6,0,.8,.3)', POP = 'cubic-bezier(.3,1.5,.5,1)';
+  // tl(el, [[seconds, props, easingToNext], ...]) -> one looping 15s WAAPI animation
+  const tl = (el, steps) => {
+    if (typeof el === 'string') el = $(el);
+    const kf = steps.map(([t, p, e]) => ({ offset: t * 1000 / D, easing: e || OUT, ...p }));
+    if (kf[0].offset > 0) kf.unshift({ ...kf[0], offset: 0 });
+    if (kf[kf.length - 1].offset < 1) kf.push({ ...kf[kf.length - 1], offset: 1 });
+    el.animate(kf, { duration: D, iterations: Infinity, fill: 'both' });
+  };
+  const hide = { opacity: 0 }, show = { opacity: 1 };
+  // enter/hold/exit helper: fade + slide
+  const beat = (el, a, b, from = 'translateY(30px)', to = 'translateY(-20px)', d = .35) =>
+    tl(el, [[a, { opacity: 0, transform: from }], [a + d, { opacity: 1, transform: 'none' }], [b - .3, { opacity: 1, transform: 'none' }, IN], [b, { opacity: 0, transform: to }]]);
+
+  // 0–1s hook
+  tl('hook', [[0, { opacity: 0, transform: 'scale(.6)' }, POP], [.35, { opacity: 1, transform: 'scale(1)' }], [.85, { opacity: 1, transform: 'scale(1)' }, IN], [1.1, { opacity: 0, transform: 'scale(1.4)' }]]);
+  tl('spark', [[0, { opacity: 0, transform: 'scale(0)' }], [.3, { opacity: 1, transform: 'scale(1)' }], [.95, { opacity: 1, transform: 'translate(0,0) scale(1.4)' }], [1.3, { opacity: 1, transform: 'translate(-550px,-60px) scale(1)' }], [2.4, { opacity: 1, transform: 'translate(-550px,-60px) scale(1)' }], [2.6, { opacity: 0, transform: 'translate(-550px,-60px) scale(0)' }]]);
+
+  // the browser: outline draws, wireframe, then real site
+  tl('device', [[1.0, { opacity: 1, transform: 'none' }], [8.2, { opacity: 1, transform: 'none' }], [8.8, { opacity: 1, transform: 'translate(-40px,-20px) scale(.82)' }], [10.6, { opacity: 1, transform: 'translate(-40px,-20px) scale(.82)' }, IN], [11.3, { opacity: 0, transform: 'translate(-40px,-700px) scale(.6)' }]]);
+  tl('outlineRect', [[1.2, { strokeDashoffset: '2300px', opacity: 1 }, 'ease-in-out'], [2.5, { strokeDashoffset: '0px', opacity: 1 }], [4.9, { strokeDashoffset: '0px', opacity: 1 }], [5.3, { strokeDashoffset: '0px', opacity: 0 }]]);
+  document.querySelector('.browser').animate([{ opacity: 0, offset: 0 }, { opacity: 0, offset: 2.3 / 15, easing: OUT }, { opacity: 1, offset: 2.6 / 15 }, { opacity: 1, offset: 1 }], { duration: D, iterations: Infinity, fill: 'both' });
+  ['w1', 'w2', 'w3', 'w4', 'w5'].forEach((w, i) => tl(w, [[2.5 + i * .25, { opacity: 0, transform: 'scale(.9)' }, POP], [2.8 + i * .25, { opacity: 1, transform: 'none' }]]));
+  tl('sketch', [[4.9, show], [5.6, hide]]);
+  // brand paint (design beat)
+  tl('nav', [[5.0, { opacity: 0, transform: 'translateY(-12px)' }], [5.4, { opacity: 1, transform: 'none' }]]);
+  tl('hero', [[5.3, { opacity: 0, transform: 'scale(.94)' }, POP], [5.8, { opacity: 1, transform: 'none' }]]);
+  ['t1', 't2', 't3', 't4'].forEach((t, i) => tl(t, [[6.3 + i * .18, { opacity: 0, transform: 'translateY(-8px)' }], [6.55 + i * .18, { opacity: 1, transform: 'none' }]]));
+  ['c1', 'c2', 'c3'].forEach((c, i) => tl(c, [[5.6, { opacity: 0 }], [6.5 + i * .3, { opacity: 0, transform: 'translateY(30px) scale(.9)' }, POP], [6.9 + i * .3, { opacity: 1, transform: 'none' }], [7.35 + i * .25, { transform: 'none' }], [7.45 + i * .25, { transform: 'scale(.95)' }], [7.6 + i * .25, { transform: 'none' }]]));
+  tl('lock', [[10.4, { transform: 'scale(1)' }], [10.6, { transform: 'scale(1.6)', background: '#19b37a' }], [10.8, { transform: 'scale(1)', background: '#19b37a' }]]);
+  tl('live', [[0, hide], [10.5, { opacity: 0, transform: 'scale(.4)' }, POP], [10.8, { opacity: 1, transform: 'none' }]]);
+
+  // right column beats
+  beat('say1', 1.1, 4.6);
+  beat('say2', 4.85, 6.2);
+  ['sw1', 'sw2', 'sw3', 'sw4'].forEach((s, i) => tl(s, [[5.0 + i * .1, { opacity: 0, transform: 'translateY(20px) rotate(-20deg)' }, POP], [5.35 + i * .1, { opacity: 1, transform: 'none' }], [5.7 + i * .05, { opacity: 1, transform: 'none' }, IN], [6.1, { opacity: 0, transform: `translate(${-520 + i * 40}px, ${-60 + i * 30}px) scale(.3)` }]]));
+  tl('spec', [[5.2, { opacity: 0, transform: 'translateY(16px)' }], [5.55, { opacity: 1, transform: 'none' }]]);
+  beat('say3', 6.3, 8.1);
+  beat('say4', 8.15, 10.55);
+  beat('gauge', 8.5, 10.55, 'translateY(30px)', 'translateY(20px)');
+  beat('say5', 10.85, 12.6);
+
+  // other screens
+  tl('tablet', [[8.4, { opacity: 0, transform: 'translate(120px,40px) rotate(8deg)' }, POP], [9.0, { opacity: 1, transform: 'rotate(-3deg)' }], [10.6, { opacity: 1, transform: 'rotate(-3deg)' }, IN], [11.35, { opacity: 0, transform: 'translate(0,-700px) rotate(-3deg)' }]]);
+  tl('phone', [[8.7, { opacity: 0, transform: 'translate(120px,60px) rotate(10deg)' }, POP], [9.3, { opacity: 1, transform: 'rotate(4deg)' }], [10.65, { opacity: 1, transform: 'rotate(4deg)' }, IN], [11.4, { opacity: 0, transform: 'translate(0,-700px) rotate(4deg)' }]]);
+
+  // launch
+  tl('trail', [[10.6, { opacity: 0, transform: 'scaleY(.2)' }], [10.9, { opacity: 1, transform: 'translateY(-120px) scaleY(1.4)' }], [11.5, { opacity: 0, transform: 'translateY(-600px) scaleY(2)' }]]);
+  tl('globe', [[11.1, { opacity: 0, transform: 'scale(.3) rotate(-40deg)' }, POP], [11.6, { opacity: 1, transform: 'scale(1) rotate(0)' }], [12.5, { opacity: 1, transform: 'scale(1.03) rotate(10deg)' }, IN], [12.8, { opacity: 0, transform: 'scale(1.3) rotate(14deg)' }]]);
+  ['p1', 'p2', 'p3'].forEach((p, i) => tl(p, [[11.5 + i * .25, { opacity: 0, transform: 'translateY(20px) scale(.8)' }, POP], [11.8 + i * .25, { opacity: 1, transform: 'none' }], [12.45, { opacity: 1, transform: 'none' }, IN], [12.75, { opacity: 0, transform: 'translateY(-20px)' }]]));
+
+  // CTA
+  tl('cta', [[12.55, { opacity: 0, clipPath: 'circle(0% at 50% 55%)' }, 'cubic-bezier(.7,0,.2,1)'], [13.05, { opacity: 1, clipPath: 'circle(90% at 50% 55%)' }], [14.75, { opacity: 1, clipPath: 'circle(90% at 50% 55%)' }, IN], [15, { opacity: 0, clipPath: 'circle(90% at 50% 55%)' }]]);
+  [...$('cta').children].forEach((c, i) => tl(c, [[12.8 + i * .18, { opacity: 0, transform: 'translateY(26px)' }, POP], [13.25 + i * .18, { opacity: 1, transform: 'none' }]]));
+  tl(document.querySelector('.cta .btn'), [[13.4, { opacity: 0, transform: 'scale(.7)' }, POP], [13.8, { opacity: 1, transform: 'scale(1)' }], [14.1, { transform: 'scale(1.06)' }], [14.4, { transform: 'scale(1)' }]]);
+
+  // subtitles + counters follow the shared clock
+  const SUBS = [[0, .9, 'عندك فكرة؟'], [.98, 4.5, 'نحوّلها إلى موقع ووردبريس يعمل لصالحك.'], [4.84, 6.2, 'نصمّم بهويّتك،'], [6.29, 8.05, 'نبني صفحاتك ومتجرك،'], [8.12, 10.6, 'ونجعله سريعًا على كل الشاشات.'], [10.84, 12.4, 'ثم نطلقه للعالم.'], [12.74, 14.9, 'احجز استشارتك المجانية اليوم.']];
+  const ar = n => n.toLocaleString('ar-EG');
+  const subEl = $('subtitle'), ring = $('ring'), scoreEl = $('score'), badge = $('badge');
+  let lastSub = -1;
+  const paint = ms => {
+    const s = ms / 1000;
+    const i = SUBS.findIndex(([a, b]) => s >= a && s < b);
+    if (i !== lastSub) { subEl.textContent = i < 0 ? '' : SUBS[i][2]; subEl.parentElement.style.opacity = i < 0 ? 0 : 1; lastSub = i; }
+    const k = Math.min(1, Math.max(0, (s - 8.7) / 1.3)), sc = Math.round(98 * (1 - Math.pow(1 - k, 3)));
+    ring.style.setProperty('--score', sc); scoreEl.textContent = ar(sc);
+    badge.textContent = ar(s < 7.4 ? 0 : s < 7.65 ? 1 : s < 7.9 ? 2 : 3);
+  };
+
+  // transport + voiceover sync
+  const anims = () => stage.getAnimations({ subtree: true });
+  const vo = $('vo'), playBtn = $('play'), soundBtn = $('sound'), scrub = $('scrub'), timeEl = $('time');
+  let paused = false, scrubbing = false, sound = false;
+  const now = () => { const a = anims()[0]; return a ? (a.currentTime || 0) % D : 0; };
+  const setTime = t => { anims().forEach(a => { a.currentTime = t; }); paint(t % D); syncAudio(t % D, true); };
+  const setPaused = p => { paused = p; anims().forEach(a => p ? a.pause() : a.play()); playBtn.textContent = p ? 'تشغيل' : 'إيقاف مؤقت'; if (p) vo.pause(); };
+  const syncAudio = (t, force) => {
+    if (!sound || paused) { if (!vo.paused) vo.pause(); return; }
+    const s = t / 1000;
+    if (s >= vo.duration - .05 || s < 0) { if (!vo.paused) vo.pause(); return; }
+    if (force || Math.abs(vo.currentTime - s) > .25) vo.currentTime = s;
+    if (vo.paused) vo.play().catch(() => {});
+  };
+  soundBtn.addEventListener('click', () => {
+    sound = !sound;
+    soundBtn.textContent = sound ? 'كتم الصوت' : 'تشغيل بالصوت';
+    if (sound) { setTime(0); setPaused(false); vo.currentTime = 0; vo.play().catch(() => {}); } else vo.pause();
+  });
+  playBtn.addEventListener('click', () => { setPaused(!paused); if (!paused) syncAudio(now(), true); });
+  $('replay').addEventListener('click', () => { setPaused(false); setTime(0); });
+  scrub.addEventListener('input', () => { scrubbing = true; setPaused(true); setTime(+scrub.value); });
+  scrub.addEventListener('change', () => { scrubbing = false; });
+
+  let prev = 0;
+  const tick = () => {
+    const t = now();
+    paint(t);
+    if (t < prev - 1000) syncAudio(t, true); else syncAudio(t, false);
+    prev = t;
+    if (!scrubbing) scrub.value = t;
+    timeEl.textContent = `${(t / 1000).toLocaleString('ar-EG', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} / ١٥ ث`;
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { setTime(7900); setPaused(true); }
+  window.__explainer = { setTime: t => { anims().forEach(a => { a.currentTime = t; }); paint(t); }, setPaused };
+})();
+</script>
