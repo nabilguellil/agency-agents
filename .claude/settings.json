@@ -4,7 +4,8 @@
     "claude-mem@thedotmack": true,
     "claude-mem-cowork@thedotmack": true,
     "impeccable@impeccable": true,
-    "ponytail@ponytail": true
+    "ponytail@ponytail": true,
+    "claude-obsidian@agricidaniel-claude-obsidian": true
   },
   "extraKnownMarketplaces": {
     "claude-plugins-official": {
@@ -29,6 +30,12 @@
       "source": {
         "source": "github",
         "repo": "DietrichGebert/ponytail"
+      }
+    },
+    "agricidaniel-claude-obsidian": {
+      "source": {
+        "source": "github",
+        "repo": "AgriciDaniel/claude-obsidian"
       }
     }
   }
